@@ -1,13 +1,13 @@
 import React from "react";
-import { ScrollView, View, StyleSheet } from "react-native";
+import { ScrollView, StyleSheet } from "react-native";
 import {
   Button,
-  Paragraph,
   useTheme,
   Card,
-  Title,
-  IconButton,
+  Colors,
   Avatar,
+  List,
+  Divider,
 } from "react-native-paper";
 import Progression from "./Progression";
 
@@ -28,33 +28,48 @@ const Parcours = () => {
           left={(props) => <Avatar.Icon {...props} icon="file-document" />}
         />
         <Card.Content>
-          <Paragraph>
-            Dotted around the Hoenn region, you will find loamy soil, many of
-            which are housing berries. Once you have picked the berries, then
-            you have the ability to use that loamy soil to grow your own
-            berries. These can be any berry and will require attention to get
-            the best crop.
-          </Paragraph>
+          <List.Section>
+            <List.Item
+              left={(props) => (
+                <List.Icon
+                  {...props}
+                  icon="language-javascript"
+                  color={Colors.yellow800}
+                />
+              )}
+              title="12/20"
+              right={(props) => <List.Icon {...props} icon="arrow-right" />}
+            />
+            <Divider />
+            <List.Item
+              left={(props) => (
+                <List.Icon
+                  {...props}
+                  icon="language-javascript"
+                  color={Colors.yellow800}
+                />
+              )}
+              title="13.5/20"
+              right={(props) => <List.Icon {...props} icon="arrow-right" />}
+            />
+            <Divider />
+            <List.Item
+              left={(props) => (
+                <List.Icon
+                  {...props}
+                  icon="language-java"
+                  color={Colors.red800}
+                />
+              )}
+              title="16/20"
+              right={(props) => <List.Icon {...props} icon="arrow-right" />}
+            />
+          </List.Section>
         </Card.Content>
-      </Card>
-
-      <Card style={styles.card}>
-        <Card.Title
-          title="Card Title"
-          subtitle="Card Subtitle"
-          left={(props) => <Avatar.Icon {...props} icon="folder" />}
-        />
-        <Card.Content>
-          <Title>Card title</Title>
-          <Paragraph>Card content</Paragraph>
-        </Card.Content>
-        <Card.Cover source={{ uri: "https://picsum.photos/700" }} />
         <Card.Actions>
-          <Button>Cancel</Button>
-          <Button>Ok</Button>
+          <Button onPress={() => {}}>Voir plus</Button>
         </Card.Actions>
       </Card>
-
     </ScrollView>
   );
 };

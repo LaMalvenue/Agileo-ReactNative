@@ -6,8 +6,8 @@ const AppNavigationTop = (props) => {
 
   return (
     <Appbar.Header>
-      <Appbar.Content title={props.title} /> 
-      <Appbar.Action icon={dots} onPress={() => {}} />
+      <Appbar.Content title={props.title} titleStyle={{ color: "white" }} /> 
+      <Appbar.Action icon={dots} onPress={() => {}} color={"white" } />
     </Appbar.Header>
   );
 }

@@ -7,6 +7,7 @@ import {
   useTheme,
   Card,
   Avatar,
+  Button,
 } from "react-native-paper";
 
 const Progression = () => {

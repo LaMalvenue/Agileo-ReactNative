@@ -43,6 +43,7 @@ const AppNavigationBottom = ({ setTitle }) => {
         setTitle(routes[i].title);
       }}
       renderScene={renderScene}
+      barStyle={{ backgroundColor: '#694fad' }}
     />
   );
 }
