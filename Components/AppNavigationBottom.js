@@ -24,7 +24,7 @@ const AppNavigationBottom = ({ setTitle }) => {
     { key: "calendar", title: "Calendrier", icon: "calendar" },
     { key: "profile", title: "Mon espace", icon: "account-circle" },
     { key: "messages", title: "Messages", icon: "comment-multiple" },
-    { key: "parameters", title: "Paramètres", icon: "hammer-wrench" },
+    { key: "parameters", title: "Paramètres", icon: "cog" },
   ]);
 
   const renderScene = BottomNavigation.SceneMap({

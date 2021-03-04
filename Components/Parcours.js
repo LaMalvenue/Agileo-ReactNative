@@ -1,34 +1,61 @@
 import React from "react";
-import { View, StyleSheet } from "react-native";
+import { ScrollView, View, StyleSheet } from "react-native";
 import {
-  Colors,
   Button,
-  ProgressBar,
   Paragraph,
   useTheme,
+  Card,
+  Title,
+  IconButton,
+  Avatar,
 } from "react-native-paper";
+import Progression from "./Progression";
 
 const Parcours = () => {
-  const [progress, setProgress] = React.useState(20);
-
   const {
     colors: { background },
   } = useTheme();
 
   return (
-    <View style={styles.container}>
-      <View style={styles.row}>
-        <Paragraph>Réussite globale</Paragraph>
-        <ProgressBar 
-            progress={progress} 
-            color={Colors.orange800} 
-            style={{ height: 20 }}
+    <ScrollView
+      style={{ backgroundColor: background }}
+      contentContainerStyle={styles.content}
+    >
+      <Progression />
+      <Card style={styles.card}>
+        <Card.Title
+          title="Derniers résultats"
+          left={(props) => <Avatar.Icon {...props} icon="file-document" />}
         />
-        <Button onPress={() => {}} style={styles.button}>
-            Voir mes notes
-          </Button>
-      </View>
-    </View>
+        <Card.Content>
+          <Paragraph>
+            Dotted around the Hoenn region, you will find loamy soil, many of
+            which are housing berries. Once you have picked the berries, then
+            you have the ability to use that loamy soil to grow your own
+            berries. These can be any berry and will require attention to get
+            the best crop.
+          </Paragraph>
+        </Card.Content>
+      </Card>
+
+      <Card style={styles.card}>
+        <Card.Title
+          title="Card Title"
+          subtitle="Card Subtitle"
+          left={(props) => <Avatar.Icon {...props} icon="folder" />}
+        />
+        <Card.Content>
+          <Title>Card title</Title>
+          <Paragraph>Card content</Paragraph>
+        </Card.Content>
+        <Card.Cover source={{ uri: "https://picsum.photos/700" }} />
+        <Card.Actions>
+          <Button>Cancel</Button>
+          <Button>Ok</Button>
+        </Card.Actions>
+      </Card>
+
+    </ScrollView>
   );
 };
 
@@ -37,11 +64,12 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   row: {
-    backgroundColor: Colors.white,
-    padding: 16,
-    height: 50,
+    marginVertical: 10,
   },
-  button: {
+  content: {
+    padding: 4,
+  },
+  card: {
     margin: 4,
   },
 });

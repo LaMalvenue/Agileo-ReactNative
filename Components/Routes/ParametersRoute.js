@@ -8,11 +8,16 @@ const ParametersRoute = () => {
   const [showStatistics, setShowStatistics] = React.useState(false);
   const [showCustomColor, setShowCustomColor] = React.useState(false);
   const [showDarkMode, setShowDarkMode] = React.useState(false);
+  const [showNotifications, setShowNotifications] = React.useState(false);
 
   return (
     <Card>
       <View style={styles.row}>
-        <Paragraph>Afficher les statistiques</Paragraph>
+        <Paragraph>Désactiver les notifications</Paragraph>
+        <Switch value={showNotifications} onValueChange={setShowNotifications} />
+      </View>
+      <View style={styles.row}>
+        <Paragraph>Désactiver les statistiques</Paragraph>
         <Switch value={showStatistics} onValueChange={setShowStatistics} />
       </View>
       <View style={styles.row}>
