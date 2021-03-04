@@ -2,17 +2,18 @@ import React from "react";
 import { View, StyleSheet } from "react-native";
 import { Colors, Card, Switch, Paragraph, useTheme } from "react-native-paper";
 
-const Parameters = () => {
+const ParametersRoute = () => {
   const { colors } = useTheme();
 
+  const [showStatistics, setShowStatistics] = React.useState(false);
   const [showCustomColor, setShowCustomColor] = React.useState(false);
-  const [showExactTheme, setShowExactTheme] = React.useState(false);
+  const [showDarkMode, setShowDarkMode] = React.useState(false);
 
   return (
     <Card>
       <View style={styles.row}>
         <Paragraph>Afficher les statistiques</Paragraph>
-        <Switch value={showExactTheme} onValueChange={setShowExactTheme} />
+        <Switch value={showStatistics} onValueChange={setShowStatistics} />
       </View>
       <View style={styles.row}>
         <Paragraph>Couleur personnalisée</Paragraph>
@@ -20,7 +21,7 @@ const Parameters = () => {
       </View>
       <View style={styles.row}>
         <Paragraph>Mode sombre</Paragraph>
-        <Switch value={showExactTheme} onValueChange={setShowExactTheme} />
+        <Switch value={showDarkMode} onValueChange={setShowDarkMode} />
       </View>
     </Card>
   );
@@ -52,4 +53,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Parameters;
+export default ParametersRoute;

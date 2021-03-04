@@ -8,7 +8,7 @@ import { name as appName } from "./../app.json";
 const FirstRoute = () => (
     <View style={[styles.scene]}> 
         <Text>Blabla</Text>
-        <Avatar.Text size={24} label="XD" />
+        <Avatar.Text size={24} label="LC" />
     </View>
 );
 

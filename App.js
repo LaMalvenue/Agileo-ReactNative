@@ -3,9 +3,8 @@ import {
   DefaultTheme,
   Provider as PaperProvider 
 } from 'react-native-paper';
-import AppNavigation from './Components/AppNavigation';
-import BottomAppNavigation from './Components/BottomAppNavigation';
-import Slider from './Components/Slider';
+import AppNavigationTop from './Components/AppNavigationTop';
+import AppNavigationBottom from './Components/AppNavigationBottom';
 
 const theme = {
   ...DefaultTheme,
@@ -16,12 +15,15 @@ const theme = {
   },
 };
 
-export default function App() {
+const App = () => {
+  const [title, setTitle] = React.useState("Agileo");
+
   return (
     <PaperProvider theme={theme}>
-      <AppNavigation />
-      {/* <Slider /> */}
-      <BottomAppNavigation /> 
+      <AppNavigationTop title={title} />
+      <AppNavigationBottom setTitle={setTitle} />
     </PaperProvider>
   );
 }
+
+export default App;
