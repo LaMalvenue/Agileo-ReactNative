@@ -2,7 +2,6 @@ import React from "react";
 import { StyleSheet, ScrollView } from "react-native";
 import { useTheme } from "react-native-paper";
 import UserProfileClassroom from "./UserProfileClassroom";
-import UserProfileCurrentCourse from "./UserProfileCurrentCourse";
 import UserProfileInformations from "./UserProfileInformations";
 
 const UserProfile = () => {
@@ -16,7 +15,6 @@ const UserProfile = () => {
       contentContainerStyle={styles.content}
     >
       <UserProfileInformations />
-      <UserProfileCurrentCourse />
       <UserProfileClassroom />
     </ScrollView>
   );

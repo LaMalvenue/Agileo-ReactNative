@@ -24,8 +24,8 @@ const UserRoute = () => {
   const renderTabBar = (props) => (
     <TabBar
       {...props}
-      indicatorStyle={{ backgroundColor: "orange" }}
-      style={{ backgroundColor: "#694fad" }}
+      indicatorStyle={{ backgroundColor: "#92dedb" }}
+      style={{ backgroundColor: "#0cada6" }}
     />
   );
 

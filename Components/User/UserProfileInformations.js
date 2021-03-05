@@ -3,9 +3,8 @@ import { StyleSheet } from "react-native";
 import {
   Avatar,
   Card,
-  IconButton,
+  Colors,
   Button,
-  TouchableRipple,
   Divider,
   List,
 } from "react-native-paper";
@@ -15,37 +14,14 @@ const LeftContent = (props) => (
 );
 
 const UserProfileInformations = () => {
-  const [displayInformations, setDisplayInformations] = React.useState("none");
-  const [chevronInformations, setChevronInformations] = React.useState(
-    "chevron-down"
-  );
-
-  const handlePressInformations = () => {
-    if (displayInformations == "none") {
-      setDisplayInformations("flex");
-      setChevronInformations("chevron-up");
-    } else if (displayInformations == "flex") {
-      setDisplayInformations("none");
-      setChevronInformations("chevron-down");
-    }
-  };
-
   return (
     <Card style={styles.card}>
-      <TouchableRipple
-        onPress={handlePressInformations}
-        rippleColor="rgba(0, 0, 0, .32)"
-      >
         <Card.Title
           title="Lucas Charnay"
           subtitle="Développeur web"
           left={LeftContent}
-          right={(props) => (
-            <IconButton {...props} icon={chevronInformations} />
-          )}
         />
-      </TouchableRipple>
-      <Card.Content style={{ display: displayInformations }}>
+      <Card.Content>
         <List.Section>
           <List.Item
             left={(props) => <List.Icon {...props} icon="map-marker" />}
@@ -61,21 +37,21 @@ const UserProfileInformations = () => {
         <List.Section>
           <List.Item
             left={(props) => (
-              <List.Icon {...props} icon="language-javascript" />
+              <List.Icon {...props} icon="language-javascript" color={Colors.yellow600} />
             )}
             title="Javascript"
           />
           <List.Item
-            left={(props) => <List.Icon {...props} icon="language-php" />}
+            left={(props) => <List.Icon {...props} icon="language-php" color={Colors.blue600} />}
             title="PHP"
           />
           <List.Item
             title="Java"
-            left={(props) => <List.Icon {...props} icon="language-java" />}
+            left={(props) => <List.Icon {...props} icon="language-java" color={Colors.red800} />}
           />
         </List.Section>
       </Card.Content>
-      <Card.Actions style={{ display: displayInformations }}>
+      <Card.Actions>
         <Button onPress={() => {}}>Modifier le profil</Button>
       </Card.Actions>
     </Card>

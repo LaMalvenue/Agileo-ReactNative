@@ -3,9 +3,7 @@ import { StyleSheet, View } from "react-native";
 import {
   Avatar,
   Card,
-  IconButton,
   Button,
-  TouchableRipple,
   Paragraph,
   Title,
   ProgressBar,
@@ -28,24 +26,17 @@ const UserProfileCurrentCourse = () => {
 
   return (
     <Card style={styles.card}>
-      <TouchableRipple
-        onPress={handlePressParcours}
-        rippleColor="rgba(0, 0, 0, .32)"
-      >
         <Card.Title
           title="Parcours"
           left={(props) => <Avatar.Icon {...props} icon="rocket-launch" />}
-          right={(props) => <IconButton {...props} icon={chevronParcours} />}
         />
-      </TouchableRipple>
       <Card.Cover
         source={{
           uri:
             "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcoursedrive.org%2Fwp-content%2Fuploads%2F2019%2F02%2FThe-Complete-Junior-to-Senior-Web-Developer-Roadmap-2019.jpg&f=1&nofb=1",
         }}
-        style={{ display: displayParcours }}
       />
-      <Card.Content style={{ display: displayParcours }}>
+      <Card.Content>
         <Title>Développeur web</Title>
         <Paragraph>
           Apprendre et concevoir des applications web en utilisant le HTML, CSS
@@ -56,7 +47,7 @@ const UserProfileCurrentCourse = () => {
           <ProgressBar progress={progress} />
         </View>
       </Card.Content>
-      <Card.Actions style={{ display: displayParcours }}>
+      <Card.Actions>
         <Button onPress={() => {}}>Voir</Button>
         <Button onPress={() => {}}>Changer de parcours</Button>
       </Card.Actions>

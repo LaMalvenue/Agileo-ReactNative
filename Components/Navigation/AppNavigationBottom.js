@@ -1,15 +1,14 @@
 import React from "react";
 import { StyleSheet } from "react-native";
-import {
-  BottomNavigation,
-  Colors,
-} from "react-native-paper";
+import { BottomNavigation, Colors } from "react-native-paper";
+import HomeRoutes from "../Routes/HomeRoute";
 import CoursesRoutes from "../Routes/CoursesRoute";
 import CalendarRoutes from "../Routes/CalendarRoute";
 import UserRoutes from "../Routes/UserRoute";
 import MessagesRoutes from "../Routes/MessagesRoute";
 import ParametersRoutes from "../Routes/ParametersRoute";
 
+const HomeRoute = () => <HomeRoutes />;
 const CoursesRoute = () => <CoursesRoutes />;
 const CalendarRoute = () => <CalendarRoutes />;
 const UserRoute = () => <UserRoutes />;
@@ -18,21 +17,22 @@ const ParametersRoute = () => <ParametersRoutes />;
 
 const AppNavigationBottom = ({ setTitle }) => {
   const [index, setIndex] = React.useState(0);
-  
+
   const [routes] = React.useState([
+    { key: "home", title: "Accueil", icon: "home" },
     { key: "courses", title: "Cours", icon: "school" },
-    { key: "calendar", title: "Calendrier", icon: "calendar" },
-    { key: "user", title: "Mon espace", icon: "account-circle" },
+    { key: "calendar", title: "Agenda", icon: "calendar" },
     { key: "messages", title: "Messages", icon: "comment-multiple" },
     { key: "parameters", title: "Paramètres", icon: "cog" },
   ]);
 
   const renderScene = BottomNavigation.SceneMap({
+    home: HomeRoute,
     courses: CoursesRoute,
     calendar: CalendarRoute,
     user: UserRoute,
     messages: MessagesRoute,
-    parameters: ParametersRoute
+    parameters: ParametersRoute,
   });
 
   return (
@@ -40,13 +40,12 @@ const AppNavigationBottom = ({ setTitle }) => {
       navigationState={{ index, routes }}
       onIndexChange={(i) => {
         setIndex(i);
-        setTitle(routes[i].title);
       }}
       renderScene={renderScene}
-      barStyle={{ backgroundColor: '#694fad' }}
+      barStyle={{ backgroundColor: "#f7f7f7" }}
     />
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -55,20 +54,20 @@ const styles = StyleSheet.create({
     paddingVertical: 8,
   },
   row: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
     paddingVertical: 8,
     paddingHorizontal: 16,
   },
   bottom: {
-    position: 'absolute',
+    position: "absolute",
     left: 0,
     right: 0,
     bottom: 0,
   },
   fab: {
-    position: 'absolute',
+    position: "absolute",
     right: 16,
     bottom: 28,
   },
