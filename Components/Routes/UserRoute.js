@@ -1,25 +1,24 @@
 import React from "react";
 import { StyleSheet, Dimensions } from "react-native";
 import { TabView, TabBar, SceneMap } from "react-native-tab-view";
-import Profile from "../Profile";
-import Parcours from "../Parcours";
+import UserCourse from "../User/UserCourse";
+import UserProfile from "../User/UserProfile";
 
-const ProfilRoute = () => <Profile style={[styles.scene]} />;
-
-const ParcoursRoute = () => <Parcours style={[styles.scene]} />;
+const UserCourseRoute = () => <UserCourse style={[styles.scene]} />;
+const UserProfileRoute = () => <UserProfile style={[styles.scene]} />;
 
 const initialLayout = { width: Dimensions.get("window").width };
 
-const ProfileRoute = () => {
+const UserRoute = () => {
   const [index, setIndex] = React.useState(0);
   const [routes] = React.useState([
-    { key: "profil", title: "Profil" },
-    { key: "parcours", title: "Parcours" },
+    { key: "userCourse", title: "Parcours" },
+    { key: "userProfile", title: "Profil" },
   ]);
 
   const renderScene = SceneMap({
-    profil: ProfilRoute,
-    parcours: ParcoursRoute,
+    userCourse: UserCourseRoute,
+    userProfile: UserProfileRoute,
   });
 
   const renderTabBar = (props) => (
@@ -41,7 +40,7 @@ const ProfileRoute = () => {
   );
 };
 
-export default ProfileRoute;
+export default UserRoute;
 
 const styles = StyleSheet.create({
   scene: {

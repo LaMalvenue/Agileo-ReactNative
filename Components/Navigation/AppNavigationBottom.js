@@ -4,15 +4,15 @@ import {
   BottomNavigation,
   Colors,
 } from "react-native-paper";
-import CoursesRoutes from "./Routes/CoursesRoute";
-import CalendarRoutes from "./Routes/CalendarRoute";
-import ProfileRoutes from "./Routes/ProfileRoute";
-import MessagesRoutes from "./Routes/MessagesRoute";
-import ParametersRoutes from "./Routes/ParametersRoute";
+import CoursesRoutes from "../Routes/CoursesRoute";
+import CalendarRoutes from "../Routes/CalendarRoute";
+import UserRoutes from "../Routes/UserRoute";
+import MessagesRoutes from "../Routes/MessagesRoute";
+import ParametersRoutes from "../Routes/ParametersRoute";
 
 const CoursesRoute = () => <CoursesRoutes />;
 const CalendarRoute = () => <CalendarRoutes />;
-const ProfileRoute = () => <ProfileRoutes />;
+const UserRoute = () => <UserRoutes />;
 const MessagesRoute = () => <MessagesRoutes />;
 const ParametersRoute = () => <ParametersRoutes />;
 
@@ -22,7 +22,7 @@ const AppNavigationBottom = ({ setTitle }) => {
   const [routes] = React.useState([
     { key: "courses", title: "Cours", icon: "school" },
     { key: "calendar", title: "Calendrier", icon: "calendar" },
-    { key: "profile", title: "Mon espace", icon: "account-circle" },
+    { key: "user", title: "Mon espace", icon: "account-circle" },
     { key: "messages", title: "Messages", icon: "comment-multiple" },
     { key: "parameters", title: "Paramètres", icon: "cog" },
   ]);
@@ -30,7 +30,7 @@ const AppNavigationBottom = ({ setTitle }) => {
   const renderScene = BottomNavigation.SceneMap({
     courses: CoursesRoute,
     calendar: CalendarRoute,
-    profile: ProfileRoute,
+    user: UserRoute,
     messages: MessagesRoute,
     parameters: ParametersRoute
   });

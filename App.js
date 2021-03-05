@@ -3,8 +3,8 @@ import {
   DefaultTheme,
   Provider as PaperProvider 
 } from 'react-native-paper';
-import AppNavigationTop from './Components/AppNavigationTop';
-import AppNavigationBottom from './Components/AppNavigationBottom';
+import AppNavigationTop from './Components/Navigation/AppNavigationTop';
+import AppNavigationBottom from './Components/Navigation/AppNavigationBottom';
 
 const theme = {
   ...DefaultTheme,
