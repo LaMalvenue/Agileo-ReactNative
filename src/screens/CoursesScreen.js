@@ -3,29 +3,27 @@ import color from 'color';
 import { Dimensions } from 'react-native';
 import { useTheme } from 'react-native-paper';
 import { TabView, SceneMap, TabBar } from 'react-native-tab-view';
-
-import overlay from './Overlay';
-import Feed from './Feed';
-import AllNotifications from './AllNotifications';
+import overlay from '../scripts/overlay';
+import CoursesCurrentCourse from "../components/CoursesCurrentCourse";
+import CoursesAllCourses from "../components/CoursesAllCourses";
 
 const initialLayout = { width: Dimensions.get('window').width };
 
-const All = () => <AllNotifications />;
+const All = () => <CoursesAllCourses />;
+const Current = () => <CoursesCurrentCourse />;
 
-const Mentions = () => <Feed />;
-
-const Notifications = () => {
+const CoursesScreen = () => {
   const [index, setIndex] = React.useState(0);
   const [routes] = React.useState([
-    { key: 'all', title: 'All' },
-    { key: 'mentions', title: 'Mentions' },
+    { key: "all", title: "Tous" },
+    { key: "current", title: "En cours" },
   ]);
 
   const theme = useTheme();
 
   const renderScene = SceneMap({
     all: All,
-    mentions: Mentions,
+    current: Current,
   });
 
   const tabBarColor = theme.dark
@@ -59,4 +57,4 @@ const Notifications = () => {
   );
 };
 
-export default Notifications;
+export default CoursesScreen;

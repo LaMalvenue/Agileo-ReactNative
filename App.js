@@ -5,7 +5,7 @@ import { DefaultTheme, DarkTheme, Provider as PaperProvider } from "react-native
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import DrawerContent from "./src/DrawerContent"
 
-import StackNavigator from "./src/StackNavigator";
+import Navigation from "./src/Navigation";
 
 const Drawer = createDrawerNavigator();
 
@@ -24,7 +24,7 @@ const App = () => {
     <PaperProvider theme={navigationTheme}>
       <NavigationContainer>
         <Drawer.Navigator drawerContent={props => <DrawerContent {...props} />}>
-          <Drawer.Screen name="Home" component={StackNavigator} />
+          <Drawer.Screen name="Home" component={Navigation} />
         </Drawer.Navigator>
       </NavigationContainer>
     </PaperProvider>

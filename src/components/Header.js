@@ -1,14 +1,7 @@
 import React from 'react';
-import { createStackNavigator } from '@react-navigation/stack';
 import { TouchableOpacity } from 'react-native';
 import { Appbar, Avatar, useTheme } from 'react-native-paper';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
-import { getFocusedRouteNameFromRoute } from '@react-navigation/native';
-
-import BottomTabs from './BottomTabs';
-import Details from './Details';
-
-const Stack = createStackNavigator();
 
 const Header = ({ scene, previous, navigation }) => {
   const theme = useTheme();
@@ -47,11 +40,11 @@ const Header = ({ scene, previous, navigation }) => {
     )}
     <Appbar.Content
       title={
-        title === 'Feed' ? (
+        title === 'Accueil' ? (
           <MaterialCommunityIcons
             style={{ marginRight: 10 }}
-            name="twitter"
-            size={40}
+            name="bell"
+            size={30}
             color={theme.colors.primary}
           />
         ) : (
@@ -68,32 +61,4 @@ const Header = ({ scene, previous, navigation }) => {
   );
 };
 
-const StackNavigator = () => {
-  return (
-    <Stack.Navigator
-      initialRouteName="FeedList"
-      headerMode="screen"
-      screenOptions={{
-        header: ({ scene, previous, navigation }) => (
-          <Header scene={scene} previous={previous} navigation={navigation} />
-        ),
-      }}
-    >
-      <Stack.Screen
-        name="FeedList"
-        component={BottomTabs}
-        options={({ route }) => {
-          const routeName = getFocusedRouteNameFromRoute(route) ?? 'Feed';
-          return { headerTitle: routeName };
-        }}
-      />
-      <Stack.Screen
-        name="Details"
-        component={Details}
-        options={{ headerTitle: 'Tweet' }}
-      />
-    </Stack.Navigator>
-  );
-};
-
-export default StackNavigator;
+export default Header;

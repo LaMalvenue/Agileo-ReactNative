@@ -2,7 +2,7 @@ import React from 'react';
 import { ScrollView, StyleSheet } from 'react-native';
 import { Headline, Caption, useTheme, Button } from 'react-native-paper';
 
-import overlay from './Overlay';
+import overlay from '../scripts/overlay';
 
 const Messages = () => {
   const theme = useTheme();

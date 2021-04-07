@@ -59,7 +59,7 @@ const DrawerContent = (props) => {
               />
             )}
             label="Profile"
-            onPress={() => {}}
+            onPress={() => {props.navigation.navigate('Profile')}}
           />
           <DrawerItem
             icon={({ color, size }) => (

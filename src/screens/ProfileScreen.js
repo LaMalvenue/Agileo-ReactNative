@@ -1,8 +1,8 @@
 import React from "react";
 import { StyleSheet, Dimensions } from "react-native";
 import { TabView, TabBar, SceneMap } from "react-native-tab-view";
-import UserCourse from "./../components/user/UserCourse";
-import UserProfile from "./../components/user/UserProfile";
+import UserCourse from "../components/user/UserCourse";
+import UserProfile from "../components/user/UserProfile";
 
 const UserCourseRoute = () => <UserCourse style={[styles.scene]} />;
 const UserProfileRoute = () => <UserProfile style={[styles.scene]} />;
