@@ -1,7 +1,7 @@
 import React from "react";
 import { ScrollView, View, StyleSheet } from "react-native";
-import Home from "../Home/Home";
-import AppNavigationTopHome from "./../Navigation/AppNavigationTopHome";
+import Home from "./../components/home/Home";
+import AppNavigationTopHome from "../components/navigation/AppNavigationTopHome";
 
 const HomeRoute = () => {
   return (

@@ -1,6 +1,6 @@
 import React from "react";
 import { View, Text } from "react-native";
-import AppNavigationTopCalendar from "../Navigation/AppNavigationTopCalendar";
+import AppNavigationTopCalendar from "./../components/navigation/AppNavigationTopCalendar";
 
 const CalendarRoute = () => {
   return (

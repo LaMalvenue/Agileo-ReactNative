@@ -15,7 +15,7 @@ const UserRoute = () => <UserRoutes />;
 const MessagesRoute = () => <MessagesRoutes />;
 const ParametersRoute = () => <ParametersRoutes />;
 
-const AppNavigationBottom = ({ setTitle }) => {
+const AppNavigationBottom = () => {
   const [index, setIndex] = React.useState(0);
 
   const [routes] = React.useState([

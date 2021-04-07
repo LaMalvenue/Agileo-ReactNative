@@ -8,7 +8,7 @@ import {
 } from "react-native-paper";
 
 const LeftContent = (props) => (
-  <Avatar.Image {...props} source={require("./../../assets/lucas.jpeg")} />
+  <Avatar.Image {...props} source={require("./../../../assets/lucas.jpeg")} />
 );
 
 const UserPost = () => {

@@ -1,8 +1,8 @@
 import React from "react";
 import { StyleSheet, Dimensions } from "react-native";
 import { TabView, TabBar, SceneMap } from "react-native-tab-view";
-import CoursesCurrentCourse from "./../Courses/CoursesCurrentCourse";
-import CoursesAllCourses from "./../Courses/CoursesAllCourses";
+import CoursesCurrentCourse from "./../components/courses/CoursesCurrentCourse";
+import CoursesAllCourses from "./../components/courses/CoursesAllCourses";
 
 const CoursesCurrentCourseRoute = () => <CoursesCurrentCourse style={[styles.scene]} />;
 const CoursesAllCoursesRoute = () => <CoursesAllCourses style={[styles.scene]} />;

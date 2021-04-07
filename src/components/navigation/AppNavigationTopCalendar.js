@@ -7,7 +7,7 @@ const AppNavigationTopCalendar = (props) => {
   return (
     <Appbar.Header>
       <Appbar.Action icon="bell" onPress={() => {}} color={"white"} />
-      <Avatar.Image {...props} source={require("./../../assets/lucas.jpeg")} size={40} />
+      <Avatar.Image {...props} source={require("./../../../assets/lucas.jpeg")} size={40} />
     </Appbar.Header>
   );
 };

@@ -8,7 +8,7 @@ const AppNavigationTopHome = (props) => {
 
       <Avatar.Image
         {...props}
-        source={require("./../../assets/lucas.jpeg")}
+        source={require("./../../../assets/lucas.jpeg")}
         size={35}
         onPress={() => navigation.navigate('Profile')}
         style={styles.avatar}
