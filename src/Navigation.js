@@ -6,12 +6,14 @@ import { createMaterialBottomTabNavigator } from '@react-navigation/material-bot
 import { getFocusedRouteNameFromRoute } from '@react-navigation/native';
 import overlay from './scripts/overlay';
 
-import HomeScreen from './screens/HomeScreen';
+import DashboardScreen from './screens/DashboardScreen';
 import CoursesScreen from './screens/CoursesScreen';
 import MessageScreen from './screens/MessagesScreen';
-import ProfileScreen from './screens/ProfileScreen';
+import ProfileScreen from './screens/UserScreen';
+import CourseScreen from './screens/CourseScreen';
+import CalendarScreen from './screens/CalendarScreen';
+import ParametersScreen from './screens/ParametersScreen';
 import Header from './components/Header';
-import Details from './Details';
 
 const Tab = createMaterialBottomTabNavigator();
 
@@ -23,7 +25,7 @@ const BottomTabs = () => {
 
   return (
     <Tab.Navigator 
-      initialRouteName="Feed"
+      initialRouteName="Dashboard"
       backBehavior="initialRoute"
       shifting={true}
       activeColor={theme.colors.primary}
@@ -33,12 +35,12 @@ const BottomTabs = () => {
         .string()}
     >
       <Tab.Screen 
-        name="Accueil" 
-        component={HomeScreen} 
+        name="Dashboard" 
+        component={DashboardScreen} 
         options={{
-          tabBarIcon: 'home-account',
+          tabBarIcon: 'view-dashboard',
           tabBarColor,
-        }}
+        }} 
       />
       <Tab.Screen 
         name="Cours" 
@@ -56,6 +58,14 @@ const BottomTabs = () => {
           tabBarColor,
         }} 
       />
+            <Tab.Screen 
+        name="Calendrier" 
+        component={CalendarScreen} 
+        options={{
+          tabBarIcon: 'calendar',
+          tabBarColor,
+        }}
+      />
     </Tab.Navigator>
   );
 }
@@ -65,7 +75,7 @@ const Stack = createStackNavigator();
 const Navigation = () => {
   return (
     <Stack.Navigator
-      initialRouteName="FeedList"
+      initialRouteName="Dashboard"
       headerMode="screen"
       screenOptions={{
         header: ({ scene, previous, navigation }) => (
@@ -74,10 +84,10 @@ const Navigation = () => {
       }}
     >
       <Stack.Screen
-        name="FeedList"
+        name="Dashboard"
         component={BottomTabs}
         options={({ route }) => {
-          const routeName = getFocusedRouteNameFromRoute(route) ?? 'Feed';
+          const routeName = getFocusedRouteNameFromRoute(route) ?? 'Dashboard';
           return { headerTitle: routeName };
         }}
       />
@@ -87,9 +97,14 @@ const Navigation = () => {
         options={{ headerTitle: 'Profil' }}
       />
       <Stack.Screen
-        name="Details"
-        component={Details}
-        options={{ headerTitle: 'Details' }}
+        name="Course"
+        component={CourseScreen}
+        options={{ headerTitle: 'Parcours' }}
+      />
+      <Stack.Screen
+        name="Parameters"
+        component={ParametersScreen}
+        options={{ headerTitle: 'Préférences' }}
       />
     </Stack.Navigator>
   );

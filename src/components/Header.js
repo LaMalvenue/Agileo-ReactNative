@@ -31,16 +31,13 @@ const Header = ({ scene, previous, navigation }) => {
       >
         <Avatar.Image
           size={40}
-          source={{
-            uri:
-              'https://pbs.twimg.com/profile_images/952545910990495744/b59hSXUd_400x400.jpg',
-          }}
+          source={require("./../../assets/lucas.jpeg")}
         />
       </TouchableOpacity>
     )}
     <Appbar.Content
       title={
-        title === 'Accueil' ? (
+        title === 'Dashboard' ? (
           <MaterialCommunityIcons
             style={{ marginRight: 10 }}
             name="bell"

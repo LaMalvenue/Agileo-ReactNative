@@ -26,26 +26,23 @@ const DrawerContent = (props) => {
       >
         <View style={styles.userInfoSection}>
           <Avatar.Image
-            source={{
-              uri:
-                'https://pbs.twimg.com/profile_images/952545910990495744/b59hSXUd_400x400.jpg',
-            }}
+            source={require("./../assets/lucas.jpeg")}
             size={50}
           />
-          <Title style={styles.title}>Dawid Urbaniak</Title>
-          <Caption style={styles.caption}>@trensik</Caption>
+          <Title style={styles.title}>Lucas Charnay</Title>
+          <Caption style={styles.caption}>@lcharnay</Caption>
           <View style={styles.row}>
             <View style={styles.section}>
               <Paragraph style={[styles.paragraph, styles.caption]}>
                 202
               </Paragraph>
-              <Caption style={styles.caption}>Following</Caption>
+              <Caption style={styles.caption}>Abonnements</Caption>
             </View>
             <View style={styles.section}>
               <Paragraph style={[styles.paragraph, styles.caption]}>
                 159
               </Paragraph>
-              <Caption style={styles.caption}>Followers</Caption>
+              <Caption style={styles.caption}>Abonnés</Caption>
             </View>
           </View>
         </View>
@@ -58,15 +55,22 @@ const DrawerContent = (props) => {
                 size={size}
               />
             )}
-            label="Profile"
+            label="Profil"
             onPress={() => {props.navigation.navigate('Profile')}}
+          />
+          <DrawerItem
+            icon={({ color, size }) => (
+              <MaterialCommunityIcons name="rocket-launch" color={color} size={size} />
+            )}
+            label="Parcours"
+            onPress={() => {props.navigation.navigate('Course')}}
           />
           <DrawerItem
             icon={({ color, size }) => (
               <MaterialCommunityIcons name="tune" color={color} size={size} />
             )}
-            label="Preferences"
-            onPress={() => {}}
+            label="Paramètres"
+            onPress={() => {props.navigation.navigate('Parameters')}}
           />
           <DrawerItem
             icon={({ color, size }) => (
@@ -76,14 +80,14 @@ const DrawerContent = (props) => {
                 size={size}
               />
             )}
-            label="Bookmarks"
+            label="Favoris"
             onPress={() => {}}
           />
         </Drawer.Section>
-        <Drawer.Section title="Preferences">
+        <Drawer.Section title="Préférences">
           <TouchableRipple onPress={() => {}}>
             <View style={styles.preference}>
-              <Text>Dark Theme</Text>
+              <Text>Thème Sombre</Text>
               <View pointerEvents="none">
                 <Switch value={false} />
               </View>
@@ -98,6 +102,19 @@ const DrawerContent = (props) => {
             </View>
           </TouchableRipple>
         </Drawer.Section>
+        <Drawer.Section style={styles.drawerSection}>
+          <DrawerItem
+            icon={({ color, size }) => (
+              <MaterialCommunityIcons
+                name="logout"
+                color={color}
+                size={size}
+              />
+            )}
+            label="Se déconnecter"
+            onPress={() => {}}
+          />
+          </Drawer.Section>
       </View>
     </DrawerContentScrollView>
   );

@@ -7,29 +7,16 @@ import {
   Paragraph,
   Title,
   ProgressBar,
-  TouchableRipple,
-  IconButton,
   useTheme,
 } from "react-native-paper";
 
-const CoursesCurrentCourse = () => {
-  const [progress, setProgress] = React.useState(0.64);
-  const [displayParcours, setDisplayParcours] = React.useState("flex");
-  const [chevronParcours, setChevronParcours] = React.useState("chevron-up");
+const CoursesStartedCourses = () => {
+  const [progressCourse, setProgress] = React.useState(0.64);
+  const [progressAllCourses, setProgressAllCourses] = React.useState(0.07);
 
   const {
     colors: { background },
   } = useTheme();
-
-  const handlePressParcours = () => {
-    if (displayParcours == "none") {
-      setDisplayParcours("flex");
-      setChevronParcours("chevron-up");
-    } else if (displayParcours == "flex") {
-      setDisplayParcours("none");
-      setChevronParcours("chevron-down");
-    }
-  };
 
   return (
     <ScrollView
@@ -37,17 +24,11 @@ const CoursesCurrentCourse = () => {
       contentContainerStyle={styles.content}
     >
       <Card style={styles.card}>
-        <TouchableRipple
-          onPress={handlePressParcours}
-          rippleColor="rgba(0, 0, 0, .32)"
-        >
           <Card.Title
             title="Mon Parcours"
             left={(props) => <Avatar.Icon {...props} icon="rocket-launch" />}
-            right={(props) => <IconButton {...props} icon={chevronParcours} />}
           />
-        </TouchableRipple>
-        <Card.Content style={{ display: displayParcours }}>
+        <Card.Content>
           <Card style={styles.card}>
             <Card.Cover
               source={{
@@ -63,7 +44,7 @@ const CoursesCurrentCourse = () => {
               </Paragraph>
               <View style={styles.row}>
                 <Paragraph>En cours (64%)</Paragraph>
-                <ProgressBar progress={progress} />
+                <ProgressBar progress={progressCourse} />
               </View>
             </Card.Content>
           </Card>
@@ -81,12 +62,42 @@ const CoursesCurrentCourse = () => {
               </Paragraph>
               <View style={styles.row}>
                 <Paragraph>En cours (64%)</Paragraph>
-                <ProgressBar progress={progress} />
+                <ProgressBar progress={progressCourse} />
               </View>
             </Card.Content>
           </Card>
         </Card.Content>
-        <Card.Actions style={{ display: displayParcours }}>
+        <Card.Actions>
+          <Button onPress={() => {}}>Voir plus</Button>
+        </Card.Actions>
+      </Card>
+      <Card style={styles.card}>
+          <Card.Title
+            title="Autres"
+            left={(props) => <Avatar.Icon {...props} icon="file-multiple" />}
+          />
+        <Card.Content>
+          <Card style={styles.card}>
+            <Card.Cover
+              source={{
+                uri:
+                  "https://i2.wp.com/ysnweb.net/wp-content/uploads/2020/06/photoshop.jpg?fit=960%2C640&ssl=1&resize=1280%2C720",
+              }}
+            />
+            <Card.Content>
+              <Title>Photoshop basiques</Title>
+              <Paragraph>
+                Appréhender la retouche d'image en manipulant les outils
+                Photoshop.
+              </Paragraph>
+              <View style={styles.row}>
+                <Paragraph>En cours (7%)</Paragraph>
+                <ProgressBar progress={progressAllCourses} />
+              </View>
+            </Card.Content>
+          </Card>
+        </Card.Content>
+        <Card.Actions>
           <Button onPress={() => {}}>Voir plus</Button>
         </Card.Actions>
       </Card>
@@ -106,4 +117,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default CoursesCurrentCourse;
+export default CoursesStartedCourses;

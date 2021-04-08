@@ -1,10 +1,8 @@
 import React from "react";
 import { View, StyleSheet } from "react-native";
-import { Colors, Card, Switch, Paragraph, useTheme } from "react-native-paper";
+import { Colors, Card, Switch, Paragraph } from "react-native-paper";
 
-const ParametersRoute = () => {
-  const { colors } = useTheme();
-
+const ParametersScreen = () => {
   const [showStatistics, setShowStatistics] = React.useState(false);
   const [showCustomColor, setShowCustomColor] = React.useState(false);
   const [showDarkMode, setShowDarkMode] = React.useState(false);
@@ -23,10 +21,6 @@ const ParametersRoute = () => {
       <View style={styles.row}>
         <Paragraph>Couleur personnalisée</Paragraph>
         <Switch value={showCustomColor} onValueChange={setShowCustomColor} />
-      </View>
-      <View style={styles.row}>
-        <Paragraph>Mode sombre</Paragraph>
-        <Switch value={showDarkMode} onValueChange={setShowDarkMode} />
       </View>
     </Card>
   );
@@ -58,4 +52,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default ParametersRoute;
+export default ParametersScreen;
